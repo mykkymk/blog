@@ -1,4 +1,7 @@
-<?php include 'includes/header.php'; ?>
+<?php
+//import the header
+include 'includes/header.php';
+?>
 <?php
   //create DB Object
   $db = new Database();
@@ -8,7 +11,7 @@
 
   //run the query
   $posts = $db->select($query);
-  
+
   //create query
   $query = "SELECT * FROM categories";
 
@@ -21,7 +24,7 @@
       <h2 class="blog-post-title"><?php echo $row['title']; ?></h2>
       <p class="blog-post-meta"><?php echo formatDate($row['date']); ?> by <a href="#"><?php echo $row['author']; ?></a></p>
       <?php echo shortenText($row['body']); ?>
-      <a href="post.php?id=<?php echo urlencode($row['id']); ?>" class="readmore">Read more</a>
+      <a href="post.php?id=<?php echo urlencode($row['id']); ?>" class="read more">Read more</a>
     </div><!-- /.blog-post -->
   <?php endwhile; ?>
 <?php else : ?>
@@ -29,4 +32,3 @@
 <?php endif; ?>
 <?php include 'includes/footer.php'; ?>
 
-        
