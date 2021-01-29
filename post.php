@@ -10,7 +10,7 @@
 
   //run the query
   $post = $db->select($query)->fetch_assoc();
-  
+
   //create query
   $query = "SELECT * FROM categories";
 
